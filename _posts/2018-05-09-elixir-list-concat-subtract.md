@@ -3,7 +3,7 @@ title:  "List concatenation and subtraction in elixir"
 categories: 
   - elixir
 last_modified_at: 2018-05-09T11:54:59-09:00
-tags: elixir elixir-lang TIL
+tags: elixir elixirlang TIL
 comments: true
 ---
 
@@ -79,6 +79,3 @@ iex> list = [1,2,3] -- [3]
 iex> [1,2,3] -- list
 [3]
 ```
-
-{% if page.comments %}
-{% endif %}
