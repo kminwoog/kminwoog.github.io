@@ -4,6 +4,7 @@ categories:
   - elixir
 last_modified_at: 2018-05-09T11:54:59-09:00
 tags: elixir elixir-lang TIL
+comments: true
 ---
 
 엘릭서에서 리스트을 연결하거나 뺄 때 `Kernel.++/2`, `Kernel.--/2`를 가끔 사용한다.
@@ -78,3 +79,6 @@ iex> list = [1,2,3] -- [3]
 iex> [1,2,3] -- list
 [3]
 ```
+
+{% if page.comments %}
+{% endif %}
