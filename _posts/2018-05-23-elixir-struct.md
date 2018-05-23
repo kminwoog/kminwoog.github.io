@@ -59,7 +59,25 @@ iex> Player.new(%Player{unknown: 4444})
 
 언제나 그랬던 것 처럼 코드 상황에 따라 변수가 있겠지만 `struct의 불 필요한 맴버(필드)의 제어가 가능`하다면 `맴버가 일정 개수(20?) 이하`이면 struct로 정의하는 것이 좋을 것 같다.
 
+## 내부 들여다 보기
 
+`Kernel.map_from_struct/1`를 보면 `Map.delete(struct, :__struct__)`를 수행한다.
+struct는 `__struct__`라는 필드에 `defstruct가 정의된 모듈`을 가지고 있다.
+
+```sh
+iex> Map.from_struct(pc1)
+%{max_hp: 1000, name: "kminwoog"}
+iex> Map.delete(pc1, :__struct__)
+%{max_hp: 1000, name: "kminwoog"}
+iex> Map.keys(pc1)
+[:__struct__, :max_hp, :name]
+iex> Map.values(pc1)
+[Player, 1000, "kminwoog"]
+iex(13)> %{__struct__: Player, max_hp: 1000, name: "kminwoog"} == pc1
+true
+iex> %Player{} == Player.__struct__()
+true
+```
 
 
 
