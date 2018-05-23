@@ -61,8 +61,8 @@ iex> Player.new(%Player{unknown: 4444})
 
 ## 내부 들여다 보기
 
-`Kernel.map_from_struct/1`를 보면 `Map.delete(struct, :__struct__)`를 수행한다.
-struct는 `__struct__`라는 필드에 `defstruct가 정의된 모듈`을 가지고 있다.
+`Map.from_struct/1`를 보면 `Map.delete(struct, :__struct__)`를 수행한다.
+struct는 `__struct__`라는 필드에 `defstruct가 정의된 모듈`을 가지는 특수한 형태의 map이라고 정의할 수 있다.
 
 ```sh
 iex> Map.from_struct(pc1)
